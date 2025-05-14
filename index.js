@@ -31,6 +31,8 @@ function filterActiveUsers(users) {
 function logAction(action, username) {
     if(action === undefined || username === undefined){
         throw Error ('Action and username are required')
+    } else if (action === '' || username === ''){
+        throw Error ('Action and username are required')
     }
     const timestamp = new Date().toISOString();
     return `User ${username} performed ${action} at ${timestamp}`;
